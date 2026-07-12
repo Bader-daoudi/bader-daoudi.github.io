@@ -1,0 +1,2117 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Portfolio de Bader Eddine Daoudi, ingénieur géomètre-topographe spécialisé en topographie, SIG, télédétection, photogrammétrie, analyse spatiale et intelligence artificielle."
+    >
+
+    <title>Bader Eddine Daoudi | Portfolio</title>
+
+    <style>
+        :root {
+            --primary-color: #087f8c;
+            --primary-dark: #065f68;
+            --secondary-color: #0f172a;
+            --accent-color: #0ea5e9;
+
+            --background-color: #f8fafc;
+            --background-alt: #eef4f6;
+            --card-color: #ffffff;
+
+            --text-color: #1e293b;
+            --text-light: #64748b;
+            --border-color: #dce6ea;
+
+            --shadow:
+                0 12px 35px rgba(15, 23, 42, 0.08);
+
+            --transition: 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.7;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin-inline: auto;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+
+            width: 100%;
+
+            background-color: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
+            min-height: 74px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--secondary-color);
+            white-space: nowrap;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            padding-block: 8px;
+
+            font-size: 0.92rem;
+            font-weight: 600;
+
+            color: var(--text-color);
+
+            transition: color var(--transition);
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 0;
+            height: 2px;
+
+            background-color: var(--primary-color);
+
+            transition: width var(--transition);
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active-link {
+            color: var(--primary-color);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active-link::after {
+            width: 100%;
+        }
+
+        .menu-button {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+
+            background-color: var(--card-color);
+            color: var(--secondary-color);
+
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 100vh;
+
+            padding-top: 120px;
+            padding-bottom: 70px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                radial-gradient(
+                    circle at 90% 20%,
+                    rgba(14, 165, 233, 0.13),
+                    transparent 32%
+                ),
+                radial-gradient(
+                    circle at 10% 80%,
+                    rgba(8, 127, 140, 0.12),
+                    transparent 35%
+                ),
+                var(--background-color);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.25fr 0.75fr;
+            align-items: center;
+
+            gap: 70px;
+        }
+
+        .hero-introduction {
+            margin-bottom: 8px;
+
+            color: var(--primary-color);
+
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            max-width: 760px;
+
+            margin-bottom: 12px;
+
+            color: var(--secondary-color);
+
+            font-size: clamp(2.5rem, 6vw, 4.8rem);
+            line-height: 1.08;
+            letter-spacing: -2px;
+        }
+
+        .hero h2 {
+            margin-bottom: 18px;
+
+            color: var(--primary-color);
+
+            font-size: clamp(1.35rem, 3vw, 2rem);
+            font-weight: 700;
+        }
+
+        .hero-specialites {
+            margin-bottom: 20px;
+
+            color: var(--text-color);
+
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-description {
+            max-width: 700px;
+
+            margin-bottom: 30px;
+
+            color: var(--text-light);
+
+            font-size: 1.08rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 14px;
+        }
+
+        .btn {
+            min-height: 48px;
+
+            padding: 12px 24px;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            border: 2px solid transparent;
+            border-radius: 10px;
+
+            font-weight: 700;
+
+            transition:
+                transform var(--transition),
+                background-color var(--transition),
+                color var(--transition),
+                border-color var(--transition);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-secondary {
+            border-color: var(--primary-color);
+
+            background-color: transparent;
+            color: var(--primary-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary-color);
+            color: #ffffff;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+
+            width: min(360px, 100%);
+
+            margin-inline: auto;
+        }
+
+        .hero-image-wrapper::before {
+            content: "";
+
+            position: absolute;
+            inset: 18px -18px -18px 18px;
+            z-index: 0;
+
+            border: 3px solid var(--primary-color);
+            border-radius: 24px;
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+
+            width: 100%;
+            aspect-ratio: 4 / 5;
+
+            object-fit: cover;
+            object-position: center top;
+
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .section {
+            padding-block: 95px;
+        }
+
+        .section-alt {
+            background-color: var(--background-alt);
+        }
+
+        .section-header {
+            max-width: 760px;
+
+            margin: 0 auto 52px;
+
+            text-align: center;
+        }
+
+        .section-label {
+            margin-bottom: 8px;
+
+            color: var(--primary-color);
+
+            font-size: 0.92rem;
+            font-weight: 800;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            margin-bottom: 14px;
+
+            color: var(--secondary-color);
+
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            line-height: 1.2;
+        }
+
+        .section-description {
+            color: var(--text-light);
+
+            font-size: 1.02rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            align-items: start;
+
+            gap: 50px;
+        }
+
+        .about-text {
+            display: grid;
+            gap: 18px;
+
+            color: var(--text-light);
+
+            font-size: 1.05rem;
+        }
+
+        .personal-info {
+            padding: 28px;
+
+            display: grid;
+            gap: 18px;
+
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .info-item strong {
+            display: block;
+
+            margin-bottom: 4px;
+
+            color: var(--secondary-color);
+
+            font-size: 0.92rem;
+        }
+
+        .info-item span,
+        .info-item a {
+            color: var(--text-light);
+        }
+
+        .info-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 22px;
+        }
+
+        .skill-card {
+            padding: 28px;
+
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform var(--transition),
+                border-color var(--transition);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+
+            border-color: var(--primary-color);
+        }
+
+        .skill-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 42px;
+            height: 42px;
+
+            margin-bottom: 18px;
+
+            border-radius: 10px;
+
+            background-color: rgba(8, 127, 140, 0.12);
+            color: var(--primary-color);
+
+            font-weight: 800;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 12px;
+
+            color: var(--secondary-color);
+
+            font-size: 1.15rem;
+        }
+
+        .skill-card p {
+            color: var(--text-light);
+
+            font-size: 0.97rem;
+        }
+
+        .soft-skills {
+            margin-top: 42px;
+
+            padding: 30px;
+
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .soft-skills h3 {
+            margin-bottom: 20px;
+
+            color: var(--secondary-color);
+        }
+
+        .soft-skills-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .soft-skills-list span {
+            padding: 9px 15px;
+
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+
+            background-color: var(--background-color);
+            color: var(--text-color);
+
+            font-size: 0.93rem;
+            font-weight: 600;
+        }
+
+        .timeline {
+            position: relative;
+
+            max-width: 930px;
+
+            margin-inline: auto;
+        }
+
+        .timeline::before {
+            content: "";
+
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 20px;
+
+            width: 2px;
+
+            background-color: var(--border-color);
+        }
+
+        .timeline-item {
+            position: relative;
+
+            margin-bottom: 32px;
+            padding-left: 65px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 26px;
+            left: 11px;
+
+            width: 20px;
+            height: 20px;
+
+            border: 4px solid var(--background-color);
+            border-radius: 50%;
+
+            background-color: var(--primary-color);
+
+            box-shadow: 0 0 0 2px var(--primary-color);
+        }
+
+        .timeline-card {
+            padding: 28px;
+
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-date {
+            display: inline-block;
+
+            margin-bottom: 8px;
+
+            color: var(--primary-color);
+
+            font-size: 0.92rem;
+            font-weight: 800;
+        }
+
+        .timeline-card h3 {
+            margin-bottom: 5px;
+
+            color: var(--secondary-color);
+
+            font-size: 1.25rem;
+        }
+
+        .timeline-card h4 {
+            margin-bottom: 16px;
+
+            color: var(--text-light);
+
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .timeline-card ul {
+            display: grid;
+            gap: 9px;
+        }
+
+        .timeline-card li {
+            position: relative;
+
+            padding-left: 20px;
+
+            color: var(--text-light);
+        }
+
+        .timeline-card li::before {
+            content: "";
+
+            position: absolute;
+            top: 11px;
+            left: 0;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background-color: var(--primary-color);
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 24px;
+        }
+
+        .education-card {
+            padding: 30px;
+
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .education-date {
+            display: inline-block;
+
+            margin-bottom: 12px;
+
+            color: var(--primary-color);
+
+            font-size: 0.92rem;
+            font-weight: 800;
+        }
+
+        .education-card h3 {
+            margin-bottom: 10px;
+
+            color: var(--secondary-color);
+
+            font-size: 1.2rem;
+        }
+
+        .education-card h4 {
+            margin-bottom: 8px;
+
+            color: var(--text-color);
+
+            font-size: 1rem;
+        }
+
+        .education-card p {
+            color: var(--text-light);
+        }
+
+        .project-card {
+            max-width: 930px;
+
+            margin-inline: auto;
+
+            padding: 35px;
+
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+
+            box-shadow: var(--shadow);
+
+            transition:
+                transform var(--transition),
+                border-color var(--transition);
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+
+            border-color: var(--primary-color);
+        }
+
+        .project-card h3 {
+            margin-bottom: 12px;
+
+            color: var(--secondary-color);
+
+            font-size: 1.35rem;
+            line-height: 1.4;
+        }
+
+        .project-organization {
+            margin-bottom: 20px;
+
+            color: var(--primary-color);
+
+            font-weight: 700;
+        }
+
+        .project-card ul {
+            display: grid;
+            gap: 10px;
+        }
+
+        .project-card li {
+            position: relative;
+
+            padding-left: 20px;
+
+            color: var(--text-light);
+        }
+
+        .project-card li::before {
+            content: "";
+
+            position: absolute;
+            top: 11px;
+            left: 0;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background-color: var(--primary-color);
+        }
+
+        .project-tags {
+            margin-top: 24px;
+
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 10px;
+        }
+
+        .project-tags span {
+            padding: 8px 13px;
+
+            border-radius: 999px;
+
+            background-color: rgba(8, 127, 140, 0.1);
+            color: var(--primary-dark);
+
+            font-size: 0.86rem;
+            font-weight: 700;
+        }
+
+        .engagement-grid {
+            display: grid;
+            grid-template-columns: 1.35fr 0.65fr;
+
+            gap: 24px;
+        }
+
+        .engagement-card {
+            padding: 30px;
+
+            background-color: var(--card-color);
+
+            border: 1px solid var(--border-color);
+            border-radius: 18px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .engagement-card h3 {
+            margin-bottom: 20px;
+
+            color: var(--secondary-color);
+        }
+
+        .engagement-card ul {
+            display: grid;
+            gap: 12px;
+        }
+
+        .engagement-card li {
+            position: relative;
+
+            padding-left: 20px;
+
+            color: var(--text-light);
+        }
+
+        .engagement-card li::before {
+            content: "";
+
+            position: absolute;
+            top: 11px;
+            left: 0;
+
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background-color: var(--primary-color);
+        }
+
+        .interests-list {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .interests-list span {
+            padding: 10px 16px;
+
+            border: 1px solid var(--border-color);
+            border-radius: 999px;
+
+            background-color: var(--background-color);
+
+            font-weight: 600;
+        }
+
+        .contact-section {
+            background-color: var(--secondary-color);
+            color: #ffffff;
+        }
+
+        .contact-section .section-title {
+            color: #ffffff;
+        }
+
+        .contact-section .section-description {
+            color: #cbd5e1;
+        }
+
+        .contact-card {
+            max-width: 850px;
+
+            margin-inline: auto;
+            padding: 38px;
+
+            text-align: center;
+
+            background-color: rgba(255, 255, 255, 0.06);
+
+            border: 1px solid rgba(255, 255, 255, 0.13);
+            border-radius: 20px;
+        }
+
+        .contact-card p {
+            max-width: 700px;
+
+            margin: 0 auto 26px;
+
+            color: #cbd5e1;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            gap: 14px;
+        }
+
+        .contact-link {
+            min-width: 170px;
+
+            padding: 12px 18px;
+
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 10px;
+
+            color: #ffffff;
+
+            font-weight: 700;
+
+            transition:
+                background-color var(--transition),
+                border-color var(--transition),
+                transform var(--transition);
+        }
+
+        .contact-link:hover {
+            transform: translateY(-3px);
+
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .footer {
+            padding-block: 24px;
+
+            text-align: center;
+
+            background-color: #080f1d;
+            color: #94a3b8;
+
+            font-size: 0.92rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1000px) {
+            .nav-links {
+                gap: 15px;
+            }
+
+            .nav-links a {
+                font-size: 0.86rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .menu-button {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 74px;
+                left: 0;
+
+                width: 100%;
+                max-height: 0;
+
+                overflow: hidden;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                gap: 0;
+
+                background-color: #ffffff;
+
+                border-bottom: 1px solid transparent;
+
+                transition:
+                    max-height 0.35s ease,
+                    border-color 0.35s ease;
+            }
+
+            .nav-links.active {
+                max-height: 600px;
+
+                border-color: var(--border-color);
+            }
+
+            .nav-links li {
+                width: 90%;
+
+                margin-inline: auto;
+            }
+
+            .nav-links a {
+                display: block;
+
+                padding: 14px 0;
+
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-links a::after {
+                display: none;
+            }
+
+            .hero-grid,
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid {
+                gap: 48px;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero-description {
+                margin-inline: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image-wrapper {
+                max-width: 310px;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .engagement-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .section {
+                padding-block: 72px;
+            }
+
+            .hero {
+                padding-top: 110px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .skills-grid,
+            .education-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item {
+                padding-left: 48px;
+            }
+
+            .timeline::before {
+                left: 13px;
+            }
+
+            .timeline-dot {
+                left: 4px;
+            }
+
+            .timeline-card,
+            .skill-card,
+            .education-card,
+            .project-card,
+            .engagement-card,
+            .contact-card {
+                padding: 23px;
+            }
+
+            .contact-links {
+                flex-direction: column;
+            }
+
+            .contact-link {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+
+        <nav class="navbar container">
+
+            <a href="#accueil" class="logo">
+                Bader <span>Daoudi</span>
+            </a>
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                type="button"
+                aria-label="Ouvrir le menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#apropos">À propos</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#formation">Formation</a></li>
+                <li><a href="#projets">Projet</a></li>
+                <li><a href="#engagements">Bénévolat</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section id="accueil" class="hero">
+
+            <div class="container hero-grid">
+
+                <div class="hero-content reveal">
+
+                    <p class="hero-introduction">
+                        Bonjour, je suis
+                    </p>
+
+                    <h1>
+                        Bader Eddine Daoudi
+                    </h1>
+
+                    <h2>
+                        Ingénieur géomètre-topographe
+                    </h2>
+
+                    <p class="hero-specialites">
+                        Topographie · SIG · Télédétection · Photogrammétrie · Analyse spatiale · GeoAI
+                    </p>
+
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="assets/documents/CV_Bader_Daoudi.pdf"
+                            class="btn btn-primary"
+                            target="_blank"
+                        >
+                            Consulter mon CV
+                        </a>
+
+                        <a
+                            href="#contact"
+                            class="btn btn-secondary"
+                        >
+                            Me contacter
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="hero-image-wrapper reveal">
+
+                    <img
+                        src="assets/images/photo-profil.jpg"
+                        alt="Portrait professionnel de Bader Eddine Daoudi"
+                        class="hero-image"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="apropos" class="section">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <p class="section-label">
+                        Présentation
+                    </p>
+
+                    <h2 class="section-title">
+                        À propos de moi
+                    </h2>
+
+                    <p class="section-description">
+                        Mon profil et mes principaux domaines de spécialisation.
+                    </p>
+
+                </div>
+
+
+                <div class="about-grid">
+
+                    <div class="about-text reveal">
+
+                        <p>
+                            Ingénieur géomètre-topographe spécialisé en
+                            topographie, systèmes d’information géographique,
+                            télédétection, photogrammétrie et analyse spatiale.
+                        </p>
+
+                        <p>
+                            Mon parcours académique, enrichi par des expériences
+                            de terrain et des projets techniques, m’a permis de
+                            développer de solides compétences en acquisition,
+                            traitement et valorisation des données géospatiales.
+                        </p>
+
+                        <p>
+                            Je dispose également de compétences en programmation
+                            Python et en intelligence artificielle appliquée à
+                            l’analyse d’images aériennes, satellitaires et drone.
+                        </p>
+
+                    </div>
+
+
+                    <div class="personal-info reveal">
+
+                        <div class="info-item">
+                            <strong>Nom complet</strong>
+                            <span>Bader Eddine Daoudi</span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Profession</strong>
+                            <span>Ingénieur géomètre-topographe</span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Téléphone</strong>
+
+                            <a href="tel:+212640836944">
+                                +212 6 40 83 69 44
+                            </a>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>E-mail</strong>
+
+                            <a href="mailto:badereddin00@gmail.com">
+                                badereddin00@gmail.com
+                            </a>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>Localisation</strong>
+                            <span>Maroc</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="competences" class="section section-alt">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <p class="section-label">
+                        Savoir-faire
+                    </p>
+
+                    <h2 class="section-title">
+                        Compétences techniques
+                    </h2>
+
+                    <p class="section-description">
+                        Compétences développées en géomatique, traitement de
+                        données, vision par ordinateur et développement
+                        d’applications.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+                    <article class="skill-card reveal">
+
+                        <span class="skill-number">01</span>
+
+                        <h3>
+                            SIG et analyse spatiale
+                        </h3>
+
+                        <p>
+                            QGIS, ArcGIS Pro, PostGIS, GeoServer, gestion,
+                            structuration et exploitation de données
+                            géospatiales.
+                        </p>
+
+                    </article>
+
+
+                    <article class="skill-card reveal">
+
+                        <span class="skill-number">02</span>
+
+                        <h3>
+                            Topographie et photogrammétrie
+                        </h3>
+
+                        <p>
+                            AutoCAD, Revit, acquisition par drone, traitement
+                            photogrammétrique, Pix4D et Agisoft Metashape.
+                        </p>
+
+                    </article>
+
+
+                    <article class="skill-card reveal">
+
+                        <span class="skill-number">03</span>
+
+                        <h3>
+                            Télédétection
+                        </h3>
+
+                        <p>
+                            Traitement et classification d’images, analyse
+                            d’images aériennes et satellitaires et exploitation
+                            de données d’observation de la Terre.
+                        </p>
+
+                    </article>
+
+
+                    <article class="skill-card reveal">
+
+                        <span class="skill-number">04</span>
+
+                        <h3>
+                            Intelligence artificielle
+                        </h3>
+
+                        <p>
+                            Machine learning, deep learning, détection d’objets,
+                            segmentation d’images, CNN, YOLO, Mask R-CNN et
+                            OpenCV.
+                        </p>
+
+                    </article>
+
+
+                    <article class="skill-card reveal">
+
+                        <span class="skill-number">05</span>
+
+                        <h3>
+                            Frameworks IA
+                        </h3>
+
+                        <p>
+                            TensorFlow, PyTorch et mise en œuvre de modèles de
+                            vision par ordinateur pour l’analyse d’images.
+                        </p>
+
+                    </article>
+
+
+                    <article class="skill-card reveal">
+
+                        <span class="skill-number">06</span>
+
+                        <h3>
+                            Programmation et données
+                        </h3>
+
+                        <p>
+                            Python, SQL, JavaScript, Pandas, NumPy,
+                            automatisation des traitements, Streamlit, Flask et
+                            Django.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <div class="soft-skills reveal">
+
+                    <h3>
+                        Compétences comportementales
+                    </h3>
+
+                    <div class="soft-skills-list">
+                        <span>Travail en équipe</span>
+                        <span>Communication</span>
+                        <span>Autonomie</span>
+                        <span>Adaptabilité</span>
+                        <span>Organisation</span>
+                        <span>Gestion des priorités</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="experiences" class="section">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <p class="section-label">
+                        Parcours professionnel
+                    </p>
+
+                    <h2 class="section-title">
+                        Expériences professionnelles
+                    </h2>
+
+                    <p class="section-description">
+                        Stages réalisés dans les domaines de la topographie, de
+                        la photogrammétrie, des SIG, du cadastre et du
+                        développement territorial.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline">
+
+                    <article class="timeline-item reveal">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                Septembre 2025
+                            </span>
+
+                            <h3>
+                                Stage en entreprise — Topographie,
+                                photogrammétrie et SIG
+                            </h3>
+
+                            <h4>
+                                ETAFAT Groupe PARERA
+                            </h4>
+
+                            <ul>
+                                <li>
+                                    Réalisation de levés topographiques par GPS.
+                                </li>
+
+                                <li>
+                                    Participation à des missions d’acquisition
+                                    par drone et par scanner.
+                                </li>
+
+                                <li>
+                                    Planification et préparation de missions de
+                                    terrain, incluant l’organisation des
+                                    interventions et le suivi des opérations.
+                                </li>
+
+                                <li>
+                                    Traitement de données géospatiales,
+                                    notamment des orthophotographies, des nuages
+                                    de points et des images drone.
+                                </li>
+
+                                <li>
+                                    Contribution à la production de livrables
+                                    techniques, tels que des plans,
+                                    orthophotographies, modèles numériques et
+                                    représentations 3D.
+                                </li>
+
+                                <li>
+                                    Participation à différentes missions de
+                                    terrain et de bureau réalisées dans le cadre
+                                    du stage.
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="timeline-item reveal">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                Avril 2025 – Mai 2025
+                            </span>
+
+                            <h3>
+                                Stage professionnel — Géodésie, topographie,
+                                photogrammétrie et SIG
+                            </h3>
+
+                            <h4>
+                                Institut Agronomique et Vétérinaire Hassan II —
+                                Laarba Esshoul, Maroc
+                            </h4>
+
+                            <ul>
+                                <li>
+                                    Réalisation de projets appliqués en
+                                    géodésie, topographie, photogrammétrie et
+                                    SIG.
+                                </li>
+
+                                <li>
+                                    Acquisition de données sur le terrain,
+                                    analyse spatiale et production
+                                    cartographique.
+                                </li>
+
+                                <li>
+                                    Utilisation d’outils SIG pour le
+                                    géotraitement, la cartographie thématique et
+                                    l’interprétation spatiale.
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="timeline-item reveal">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                Juillet 2024
+                            </span>
+
+                            <h3>
+                                Stage ANCFCC — Cadastre et conservation foncière
+                            </h3>
+
+                            <h4>
+                                ANCFCC — Azilal
+                            </h4>
+
+                            <ul>
+                                <li>
+                                    Initiation aux travaux cadastraux.
+                                </li>
+
+                                <li>
+                                    Traitement des dossiers cadastraux,
+                                    préparation des documents techniques et
+                                    mise à jour des données.
+                                </li>
+
+                                <li>
+                                    Participation à des missions de terrain
+                                    consacrées au contrôle cadastral et à la
+                                    vérification de la situation foncière.
+                                </li>
+
+                                <li>
+                                    Compréhension du workflow
+                                    Cadastre–Conservation foncière.
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+
+                    <article class="timeline-item reveal">
+
+                        <span class="timeline-dot"></span>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                Juillet 2023
+                            </span>
+
+                            <h3>
+                                Stage ruralisme
+                            </h3>
+
+                            <h4>
+                                Institut Agronomique et Vétérinaire Hassan II —
+                                Douar Sidi Amar, Khénifra
+                            </h4>
+
+                            <ul>
+                                <li>
+                                    Réalisation d’une monographie du douar Sidi
+                                    Amar.
+                                </li>
+
+                                <li>
+                                    Analyse de la situation socio-économique et
+                                    agricole du douar.
+                                </li>
+
+                                <li>
+                                    Étude des infrastructures, des pratiques
+                                    agricoles, des dynamiques sociales et des
+                                    modes de vie.
+                                </li>
+                            </ul>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="formation" class="section section-alt">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <p class="section-label">
+                        Parcours académique
+                    </p>
+
+                    <h2 class="section-title">
+                        Formation
+                    </h2>
+
+                    <p class="section-description">
+                        Formation en sciences géomatiques, topographie,
+                        géodésie, photogrammétrie, télédétection et systèmes
+                        d’information géographique.
+                    </p>
+
+                </div>
+
+
+                <div class="education-grid">
+
+                    <article class="education-card reveal">
+
+                        <span class="education-date">
+                            2021 – 2026
+                        </span>
+
+                        <h3>
+                            Diplôme d’ingénieur d’État en Sciences Géomatiques
+                            et Ingénierie Topographique
+                        </h3>
+
+                        <h4>
+                            Institut Agronomique et Vétérinaire Hassan II
+                        </h4>
+
+                        <p>
+                            Rabat, Maroc
+                        </p>
+
+                    </article>
+
+
+                    <article class="education-card reveal">
+
+                        <span class="education-date">
+                            Juin 2021
+                        </span>
+
+                        <h3>
+                            Baccalauréat Sciences Expérimentales — Sciences de
+                            la vie et de la Terre
+                        </h3>
+
+                        <h4>
+                            Lycée Al Massira — Azilal
+                        </h4>
+
+                        <p>
+                            Mention Très Bien
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="projets" class="section">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <p class="section-label">
+                        Projet académique
+                    </p>
+
+                    <h2 class="section-title">
+                        Projet de fin d’études
+                    </h2>
+
+                    <p class="section-description">
+                        Application de l’intelligence artificielle et de
+                        l’analyse géospatiale à la segmentation automatique
+                        d’images drone.
+                    </p>
+
+                </div>
+
+
+                <article class="project-card reveal">
+
+                    <h3>
+                        Évaluation du modèle Segment Anything SAM3 pour la
+                        segmentation automatique des arbres à partir d’images
+                        drone
+                    </h3>
+
+                    <p class="project-organization">
+                        Institut Agronomique et Vétérinaire Hassan II
+                    </p>
+
+                    <ul>
+                        <li>
+                            Mise en œuvre d’une démarche d’analyse géospatiale
+                            pour l’extraction automatique des arbres à partir
+                            d’images drone, en appui au suivi agricole et à la
+                            gestion environnementale.
+                        </li>
+
+                        <li>
+                            Développement d’une application web pour la
+                            segmentation d’images drone, la visualisation des
+                            masques, le calcul de statistiques et l’export de
+                            données géoréférencées.
+                        </li>
+
+                        <li>
+                            Application de la segmentation des couronnes
+                            d’arbres au comptage, à l’estimation des surfaces et
+                            à la production de résultats exploitables en
+                            agriculture, foresterie et géomatique.
+                        </li>
+                    </ul>
+
+                    <div class="project-tags">
+                        <span>Images drone</span>
+                        <span>Analyse géospatiale</span>
+                        <span>Segmentation d’images</span>
+                        <span>Intelligence artificielle</span>
+                        <span>Application web</span>
+                        <span>Données géoréférencées</span>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="engagements" class="section section-alt">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <p class="section-label">
+                        Vie associative
+                    </p>
+
+                    <h2 class="section-title">
+                        Bénévolat et engagements
+                    </h2>
+
+                    <p class="section-description">
+                        Activités associatives, organisation d’événements et
+                        centres d’intérêt.
+                    </p>
+
+                </div>
+
+
+                <div class="engagement-grid">
+
+                    <article class="engagement-card reveal">
+
+                        <h3>
+                            Bénévolat et engagement associatif
+                        </h3>
+
+                        <ul>
+                            <li>
+                                Membre du Bureau des étudiants — BDE IAV Hassan
+                                II.
+                            </li>
+
+                            <li>
+                                Membre du bureau exécutif — IAV Sport Club.
+                            </li>
+
+                            <li>
+                                Organisateur du Forum AMETOP–Entreprises,
+                                23e et 24e éditions, à l’IAV Hassan II.
+                            </li>
+
+                            <li>
+                                Participation à l’organisation de la cérémonie
+                                de remise des diplômes — IAV Hassan II.
+                            </li>
+
+                            <li>
+                                Organisateur de l’IGSM Rabat 2025 —
+                                International Geodetic Student Meeting.
+                            </li>
+                        </ul>
+
+                    </article>
+
+
+                    <article class="engagement-card reveal">
+
+                        <h3>
+                            Centres d’intérêt
+                        </h3>
+
+                        <div class="interests-list">
+                            <span>Sport</span>
+                            <span>Football</span>
+                            <span>Lecture</span>
+                            <span>Voyages</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section id="contact" class="section contact-section">
+
+            <div class="container">
+
+                <div class="section-header reveal">
+
+                    <p class="section-label">
+                        Échangeons
+                    </p>
+
+                    <h2 class="section-title">
+                        Contact
+                    </h2>
+
+                    <p class="section-description">
+                        Vous pouvez me contacter pour une opportunité
+                        professionnelle.
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card reveal">
+
+
+
+                    <div class="contact-links">
+
+                        <a
+                            href="mailto:badereddin00@gmail.com"
+                            class="contact-link"
+                        >
+                            E-mail
+                        </a>
+                        
+                         <a
+                            href="tel:+212640836944"
+                            class="contact-link"
+                        >
+                            Téléphone
+                        </a>
+
+                        <!-- Remplace ce lien par ton véritable profil LinkedIn -->
+
+                        <a
+                            href="https://www.linkedin.com/in/bader-daoudi-15a501277/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="contact-link"
+                        >
+                            LinkedIn
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © <span id="currentYear"></span>
+                Bader Eddine Daoudi — Tous droits réservés.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        "use strict";
+
+        const menuButton =
+            document.getElementById("menuButton");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+        const navigationLinks =
+            document.querySelectorAll(".nav-links a");
+
+
+        menuButton.addEventListener(
+            "click",
+            function () {
+                const menuIsOpen =
+                    navLinks.classList.toggle("active");
+
+                menuButton.setAttribute(
+                    "aria-expanded",
+                    menuIsOpen.toString()
+                );
+
+                menuButton.textContent =
+                    menuIsOpen ? "✕" : "☰";
+            }
+        );
+
+
+        navigationLinks.forEach(
+            function (link) {
+                link.addEventListener(
+                    "click",
+                    function () {
+                        navLinks.classList.remove("active");
+
+                        menuButton.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        menuButton.textContent = "☰";
+                    }
+                );
+            }
+        );
+
+
+        const currentYear =
+            document.getElementById("currentYear");
+
+        currentYear.textContent =
+            new Date().getFullYear();
+
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+        const revealObserver =
+            new IntersectionObserver(
+                function (entries, observer) {
+                    entries.forEach(
+                        function (entry) {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add(
+                                    "visible"
+                                );
+
+                                observer.unobserve(
+                                    entry.target
+                                );
+                            }
+                        }
+                    );
+                },
+                {
+                    threshold: 0.12
+                }
+            );
+
+        revealElements.forEach(
+            function (element) {
+                revealObserver.observe(element);
+            }
+        );
+
+
+        const sections =
+            document.querySelectorAll(
+                "main section[id]"
+            );
+
+        const sectionObserver =
+            new IntersectionObserver(
+                function (entries) {
+                    entries.forEach(
+                        function (entry) {
+                            if (!entry.isIntersecting) {
+                                return;
+                            }
+
+                            navigationLinks.forEach(
+                                function (link) {
+                                    const href =
+                                        link.getAttribute(
+                                            "href"
+                                        );
+
+                                    link.classList.toggle(
+                                        "active-link",
+                                        href ===
+                                        "#" + entry.target.id
+                                    );
+                                }
+                            );
+                        }
+                    );
+                },
+                {
+                    rootMargin:
+                        "-35% 0px -55% 0px",
+
+                    threshold: 0
+                }
+            );
+
+        sections.forEach(
+            function (section) {
+                sectionObserver.observe(section);
+            }
+        );
+    </script>
+
+</body>
+
+</html>
